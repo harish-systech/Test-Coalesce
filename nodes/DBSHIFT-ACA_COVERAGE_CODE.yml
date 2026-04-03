@@ -1,6 +1,6 @@
 fileVersion: 1
-id: 86b61c94-b778-43d8-a8d2-ac3227a92211
-name: ACA_BODY_PART_CODE
+id: 597a7a53-4bb7-4ab2-98ab-366532467b6f
+name: ACA_COVERAGE_CODE
 operation:
   database: ALLIANT_CLAIMS_ASTRUS
   deployEnabled: true
@@ -13,13 +13,13 @@ operation:
           values: []
         appliedColumnTests: {}
         columnReference:
-          columnCounter: ab4173d1-4e4b-4f93-b600-8334460f6ac9
-          stepCounter: 86b61c94-b778-43d8-a8d2-ac3227a92211
+          columnCounter: a8c66804-b901-443b-8153-29a3a1f87968
+          stepCounter: 597a7a53-4bb7-4ab2-98ab-366532467b6f
         config: {}
         dataType: VARCHAR
         defaultValue: ""
         description: ""
-        name: PART_OF_BODY_CODE
+        name: CODE
         nullable: true
         primaryKey: false
         sourceColumnReferences:
@@ -32,13 +32,13 @@ operation:
           values: []
         appliedColumnTests: {}
         columnReference:
-          columnCounter: f31f417e-7c2a-464a-93f5-6544976451e2
-          stepCounter: 86b61c94-b778-43d8-a8d2-ac3227a92211
+          columnCounter: bfd66eb6-7a71-4632-9c1c-32320b3367c0
+          stepCounter: 597a7a53-4bb7-4ab2-98ab-366532467b6f
         config: {}
         dataType: VARCHAR
         defaultValue: ""
         description: ""
-        name: DESCRIPTION
+        name: CLASS
         nullable: true
         primaryKey: false
         sourceColumnReferences:
@@ -46,7 +46,7 @@ operation:
             transform: ""
         transform: ""
         uniqueKey: false
-  name: ACA_BODY_PART_CODE
+  name: ACA_COVERAGE_CODE
   schema: REF
   sqlType: Source
   type: sourceInput

@@ -1,6 +1,6 @@
 fileVersion: 1
-id: d769c0d2-972c-4740-9830-1c3905c1d683
-name: ACA_TRANSACTION_EXPERIENCE
+id: d7d4d42c-7b56-4b8c-8515-b772c722f6d5
+name: ACA_TRANSACTION_THIRD_PARTY_RECOVERY
 operation:
   database: ALLIANT_CLAIMS_ASTRUS
   deployEnabled: true
@@ -13,27 +13,8 @@ operation:
           values: []
         appliedColumnTests: {}
         columnReference:
-          columnCounter: 6263884b-b0b6-45ef-bd1f-0e42f6d2e61a
-          stepCounter: d769c0d2-972c-4740-9830-1c3905c1d683
-        config: {}
-        dataType: NUMBER
-        defaultValue: ""
-        description: ""
-        name: ACA_TRANSACTION_EXPERIENCE_ID
-        nullable: true
-        primaryKey: false
-        sourceColumnReferences:
-          - columnReferences: []
-            transform: ""
-        transform: ""
-        uniqueKey: false
-      - acceptedValues:
-          strictMatch: true
-          values: []
-        appliedColumnTests: {}
-        columnReference:
-          columnCounter: 61f1c79a-ca57-4148-b4b1-8794c1d8fd39
-          stepCounter: d769c0d2-972c-4740-9830-1c3905c1d683
+          columnCounter: 33791d29-6799-4c2c-8051-51201777fd8b
+          stepCounter: d7d4d42c-7b56-4b8c-8515-b772c722f6d5
         config: {}
         dataType: VARCHAR
         defaultValue: ""
@@ -51,8 +32,8 @@ operation:
           values: []
         appliedColumnTests: {}
         columnReference:
-          columnCounter: b1b816a7-0248-43d9-95e5-3375b43cd700
-          stepCounter: d769c0d2-972c-4740-9830-1c3905c1d683
+          columnCounter: b1982b6b-77f6-4d04-a15e-4c7b8098c4d2
+          stepCounter: d7d4d42c-7b56-4b8c-8515-b772c722f6d5
         config: {}
         dataType: VARCHAR
         defaultValue: ""
@@ -70,13 +51,89 @@ operation:
           values: []
         appliedColumnTests: {}
         columnReference:
-          columnCounter: e340788c-d6b9-4a9f-8610-02c34d3d7b42
-          stepCounter: d769c0d2-972c-4740-9830-1c3905c1d683
+          columnCounter: 7e7a8581-2244-4b5c-897d-6063f2518e1d
+          stepCounter: d7d4d42c-7b56-4b8c-8515-b772c722f6d5
         config: {}
         dataType: NUMBER
         defaultValue: ""
         description: ""
-        name: EXPERIENCE_AMOUNT1
+        name: RECOVERY_AMOUNT1
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 6263884b-b0b6-45ef-bd1f-0e42f6d2e61a
+          stepCounter: d7d4d42c-7b56-4b8c-8515-b772c722f6d5
+        config: {}
+        dataType: NUMBER
+        defaultValue: ""
+        description: ""
+        name: RECOVERY_AMOUNT2
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: 61f1c79a-ca57-4148-b4b1-8794c1d8fd39
+          stepCounter: d7d4d42c-7b56-4b8c-8515-b772c722f6d5
+        config: {}
+        dataType: NUMBER
+        defaultValue: ""
+        description: ""
+        name: RECOVERY_AMOUNT3
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: b1b816a7-0248-43d9-95e5-3375b43cd700
+          stepCounter: d7d4d42c-7b56-4b8c-8515-b772c722f6d5
+        config: {}
+        dataType: NUMBER
+        defaultValue: ""
+        description: ""
+        name: RECOVERY_AMOUNT4
+        nullable: true
+        primaryKey: false
+        sourceColumnReferences:
+          - columnReferences: []
+            transform: ""
+        transform: ""
+        uniqueKey: false
+      - acceptedValues:
+          strictMatch: true
+          values: []
+        appliedColumnTests: {}
+        columnReference:
+          columnCounter: e340788c-d6b9-4a9f-8610-02c34d3d7b42
+          stepCounter: d7d4d42c-7b56-4b8c-8515-b772c722f6d5
+        config: {}
+        dataType: NUMBER
+        defaultValue: ""
+        description: ""
+        name: RECOVERY_AMOUNT5
         nullable: true
         primaryKey: false
         sourceColumnReferences:
@@ -90,12 +147,12 @@ operation:
         appliedColumnTests: {}
         columnReference:
           columnCounter: 4236a2cd-f55a-4632-911e-97686523cc09
-          stepCounter: d769c0d2-972c-4740-9830-1c3905c1d683
+          stepCounter: d7d4d42c-7b56-4b8c-8515-b772c722f6d5
         config: {}
         dataType: NUMBER
         defaultValue: ""
         description: ""
-        name: EXPERIENCE_AMOUNT2
+        name: RECOVERY_AMOUNT6
         nullable: true
         primaryKey: false
         sourceColumnReferences:
@@ -109,107 +166,12 @@ operation:
         appliedColumnTests: {}
         columnReference:
           columnCounter: 486a43f8-8c17-48f0-b51f-661705e4695e
-          stepCounter: d769c0d2-972c-4740-9830-1c3905c1d683
-        config: {}
-        dataType: NUMBER
-        defaultValue: ""
-        description: ""
-        name: EXPERIENCE_AMOUNT3
-        nullable: true
-        primaryKey: false
-        sourceColumnReferences:
-          - columnReferences: []
-            transform: ""
-        transform: ""
-        uniqueKey: false
-      - acceptedValues:
-          strictMatch: true
-          values: []
-        appliedColumnTests: {}
-        columnReference:
-          columnCounter: 824d546b-851f-4bb0-85f0-b472ab69e6b5
-          stepCounter: d769c0d2-972c-4740-9830-1c3905c1d683
-        config: {}
-        dataType: NUMBER
-        defaultValue: ""
-        description: ""
-        name: EXPERIENCE_AMOUNT4
-        nullable: true
-        primaryKey: false
-        sourceColumnReferences:
-          - columnReferences: []
-            transform: ""
-        transform: ""
-        uniqueKey: false
-      - acceptedValues:
-          strictMatch: true
-          values: []
-        appliedColumnTests: {}
-        columnReference:
-          columnCounter: 322de314-ca05-4c07-b2f6-3f0e8f00032c
-          stepCounter: d769c0d2-972c-4740-9830-1c3905c1d683
-        config: {}
-        dataType: NUMBER
-        defaultValue: ""
-        description: ""
-        name: EXPERIENCE_AMOUNT5
-        nullable: true
-        primaryKey: false
-        sourceColumnReferences:
-          - columnReferences: []
-            transform: ""
-        transform: ""
-        uniqueKey: false
-      - acceptedValues:
-          strictMatch: true
-          values: []
-        appliedColumnTests: {}
-        columnReference:
-          columnCounter: d8a8fd9d-2101-447a-ad85-97e3a9569614
-          stepCounter: d769c0d2-972c-4740-9830-1c3905c1d683
-        config: {}
-        dataType: NUMBER
-        defaultValue: ""
-        description: ""
-        name: EXPERIENCE_AMOUNT6
-        nullable: true
-        primaryKey: false
-        sourceColumnReferences:
-          - columnReferences: []
-            transform: ""
-        transform: ""
-        uniqueKey: false
-      - acceptedValues:
-          strictMatch: true
-          values: []
-        appliedColumnTests: {}
-        columnReference:
-          columnCounter: 1533036e-d0b5-4122-8354-946e6a18d195
-          stepCounter: d769c0d2-972c-4740-9830-1c3905c1d683
-        config: {}
-        dataType: NUMBER
-        defaultValue: ""
-        description: ""
-        name: TOTAL_EXPERIENCE_AMOUNT_ALL_RESERVE_TYPES
-        nullable: true
-        primaryKey: false
-        sourceColumnReferences:
-          - columnReferences: []
-            transform: ""
-        transform: ""
-        uniqueKey: false
-      - acceptedValues:
-          strictMatch: true
-          values: []
-        appliedColumnTests: {}
-        columnReference:
-          columnCounter: a6317b96-1c09-40e1-a965-02b4e8c1488c
-          stepCounter: d769c0d2-972c-4740-9830-1c3905c1d683
+          stepCounter: d7d4d42c-7b56-4b8c-8515-b772c722f6d5
         config: {}
         dataType: TIMESTAMP_NTZ
         defaultValue: ""
         description: ""
-        name: EXPERIENCE_TRANSACTION_DATE
+        name: THIRD_PARTY_RECOVERY_TRANSACTION_DATE
         nullable: true
         primaryKey: false
         sourceColumnReferences:
@@ -217,26 +179,7 @@ operation:
             transform: ""
         transform: ""
         uniqueKey: false
-      - acceptedValues:
-          strictMatch: true
-          values: []
-        appliedColumnTests: {}
-        columnReference:
-          columnCounter: 2d197628-98e9-4e0b-81d3-6e3e14479532
-          stepCounter: d769c0d2-972c-4740-9830-1c3905c1d683
-        config: {}
-        dataType: NUMBER
-        defaultValue: ""
-        description: ""
-        name: TRANSACTION_SEQUENCE_NUMBER
-        nullable: true
-        primaryKey: false
-        sourceColumnReferences:
-          - columnReferences: []
-            transform: ""
-        transform: ""
-        uniqueKey: false
-  name: ACA_TRANSACTION_EXPERIENCE
+  name: ACA_TRANSACTION_THIRD_PARTY_RECOVERY
   schema: DBO
   sqlType: Source
   type: sourceInput

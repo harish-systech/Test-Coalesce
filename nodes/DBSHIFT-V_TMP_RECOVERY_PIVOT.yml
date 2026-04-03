@@ -1,6 +1,6 @@
 fileVersion: 1
-id: 59c68725-d083-4903-a1c0-03a113d07e33
-name: V_TMP_PAYMENT_PIVOT
+id: 59c68725-d083-4903-a1c0-03a113d07e87
+name: V_TMP_RECOVERY_PIVOT
 operation:
   config:
     insertStrategy: INSERT
@@ -25,30 +25,30 @@ operation:
           customSQL: ""
         dependencies:
           - locationName: DBSHIFT
-            nodeName: V_TMP_PAYMENT_CURRENT
+            nodeName: V_TMP_RECOVERY_CURRENT
         join:
           joinCondition: |-
             SELECT 
-             U.UNIQUE_CLAIM_ID
-            ,U.PAYMENT_AMOUNT
+            U.UNIQUE_CLAIM_ID
+            ,U.RECOVERY_AMOUNT
             ,U.CLAIM_COVERAGE_CODE
             ,U.CLASS
-            ,CASE WHEN U.PMT_COLUMN = 'RESERVE_AMT1' THEN 'col1'
-                  WHEN U.PMT_COLUMN = 'RESERVE_AMT2' THEN 'col2'
-                  WHEN U.PMT_COLUMN = 'RESERVE_AMT3' THEN 'col3'
-                  WHEN U.PMT_COLUMN = 'RESERVE_AMT4' THEN 'col4'
-                  WHEN U.PMT_COLUMN = 'RESERVE_AMT5' THEN 'col5'
+            ,CASE WHEN U.REC_COLUMN = 'RECOVERY_AMOUNT1' THEN 'col1'
+                  WHEN U.REC_COLUMN = 'RECOVERY_AMOUNT2' THEN 'col2'
+                  WHEN U.REC_COLUMN = 'RECOVERY_AMOUNT3' THEN 'col3'
+                  WHEN U.REC_COLUMN = 'RECOVERY_AMOUNT4' THEN 'col4'
+                  WHEN U.REC_COLUMN = 'RECOVERY_AMOUNT5' THEN 'col5'
                   ELSE 'col6'
                   END AS RESERVE_TYPE_COLUMN_NUMBER
-            FROM {{ ref('DBSHIFT', 'V_TMP_PAYMENT_CURRENT') }} PC
+            FROM {{ ref('DBSHIFT', 'V_TMP_RECOVERY_CURRENT') }} TE
             UNPIVOT
             (
-              PAYMENT_AMOUNT
-              FOR PMT_COLUMN IN (RESERVE_AMT1, RESERVE_AMT2, RESERVE_AMT3, RESERVE_AMT4, RESERVE_AMT5, RESERVE_AMT6)
+              RECOVERY_AMOUNT
+              FOR REC_COLUMN IN (RECOVERY_AMOUNT1, RECOVERY_AMOUNT2, RECOVERY_AMOUNT3, RECOVERY_AMOUNT4, RECOVERY_AMOUNT5, RECOVERY_AMOUNT6)
             ) U
-        name: V_TMP_PAYMENT_PIVOT
+        name: V_TMP_RECOVERY_PIVOT
         noLinkRefs: []
-  name: V_TMP_PAYMENT_PIVOT
+  name: V_TMP_RECOVERY_PIVOT
   overrideSQL: false
   schema: STAGING
   sqlType: Stage

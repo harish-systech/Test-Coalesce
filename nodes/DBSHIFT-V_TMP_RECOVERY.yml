@@ -1,6 +1,6 @@
 fileVersion: 1
-id: 59c68725-d083-4903-a1c0-03a113d07e55
-name: V_TMP_EXP
+id: 59c68725-d083-4903-a1c0-03a113d07e65
+name: V_TMP_RECOVERY
 operation:
   config:
     insertStrategy: INSERT
@@ -25,27 +25,26 @@ operation:
           customSQL: ""
         dependencies:
           - locationName: DBSHIFT
-            nodeName: V_TMP_EXP_RESERVE_TYPE
+            nodeName: V_TMP_RECOVERY_RESERVE_TYPE
         join:
           joinCondition: |-
             SELECT
               UNIQUE_CLAIM_ID
-            ,IFNULL("'B. I.'",0.00) AS INCD_BI
-            ,IFNULL(COLLISION,0.00) AS INCD_COLLISION
-            ,IFNULL(COMP,0.00) AS INCD_COMP
-            ,IFNULL(EXPENSE,0.00) AS INCD_EXPENSE
-            ,IFNULL(INDEMNITY,0.00) AS INCD_INDEMNITY
-            ,IFNULL(MEDICAL,0.00) AS INCD_MEDICAL
-            ,IFNULL("'P. D.'",0.00) AS INCD_PD
-            ,IFNULL(REHAB,0.00) AS INCD_REHAB
-            ,ANY_VALUE(TOTAL_EXPERIENCE) as TOTAL_EXPERIENCE
-            FROM {{ ref('DBSHIFT', 'V_TMP_EXP_RESERVE_TYPE') }} T1
-            PIVOT (SUM(EXPERIENCE_AMOUNT)
+            ,IFNULL("'B. I.'",0.00) AS REC_BI
+            ,IFNULL(COLLISION,0.00) AS REC_COLLISION
+            ,IFNULL(COMP,0.00) AS REC_COMP
+            ,IFNULL(EXPENSE,0.00) AS REC_EXPENSE
+            ,IFNULL(INDEMNITY,0.00) AS REC_INDEMNITY
+            ,IFNULL(MEDICAL,0.00) AS REC_MEDICAL
+            ,IFNULL("'P. D.'",0.00) AS REC_PD
+            ,IFNULL(REHAB,0.00) AS REC_REHAB
+            FROM {{ ref('DBSHIFT', 'V_TMP_RECOVERY_RESERVE_TYPE') }} T1
+            PIVOT (SUM(RECOVERY_AMOUNT)
             FOR RESERVE_TYPE IN('B. I.','BUILDING','COLLISION','COMP','CONTENTS','EXPENSE','EXTD. COVG.','INDEMNITY','LOSS','MEDICAL','P. D.','REHAB','V & M.M.','WAGE LOSS','Zero (0)'))
             GROUP BY UNIQUE_CLAIM_ID
-        name: V_TMP_EXP
+        name: V_TMP_RECOVERY
         noLinkRefs: []
-  name: V_TMP_EXP
+  name: V_TMP_RECOVERY
   overrideSQL: false
   schema: STAGING
   sqlType: Stage

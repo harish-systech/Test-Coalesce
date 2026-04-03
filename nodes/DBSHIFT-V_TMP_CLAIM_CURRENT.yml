@@ -25,17 +25,17 @@ operation:
           customSQL: ""
         dependencies:
           - locationName: DBSHIFT
-            nodeName: ACA_TRANSACTION_CLAIM
-          - locationName: DBSHIFT
-            nodeName: ACA_BODY_PART_CODE
+            nodeName: ACA_ACCIDENT_SOURCE_CODE
           - locationName: DBSHIFT
             nodeName: ACA_ACCIDENT_TYPE_CODE
           - locationName: DBSHIFT
+            nodeName: ACA_BODY_PART_CODE
+          - locationName: DBSHIFT
             nodeName: ACA_NATURE_CODE
           - locationName: DBSHIFT
-            nodeName: ACA_ACCIDENT_SOURCE_CODE
-          - locationName: DBSHIFT
             nodeName: ACA_PYRAMID
+          - locationName: DBSHIFT
+            nodeName: ACA_TRANSACTION_CLAIM
         join:
           joinCondition: |-
             WITH CTECLAIM AS (
