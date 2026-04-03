@@ -12,7 +12,7 @@ operation:
   deployEnabled: true
   description: ""
   isMultisource: false
-  locationName: DBSHIFT
+  locationName: TARGET
   materializationType: view
   metadata:
     appliedNodeTests: []
@@ -529,7 +529,7 @@ operation:
   name: ASTRUSMODELCLAIM
   overrideSQL: false
   schema: RPT
-  sqlType: View
+  sqlType: Stage
   type: sql
   version: 1
 type: Node
