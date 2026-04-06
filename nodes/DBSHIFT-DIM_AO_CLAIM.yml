@@ -941,8 +941,7 @@ operation:
           - locationName: DBSHIFT
             nodeName: STG_AO_CLAIM_INSERT_DATA
         join:
-          joinCondition: FROM {{ ref('DBSHIFT', 'STG_AO_CLAIM_INSERT_DATA') }} AS
-            SRC
+          joinCondition: FROM {{ ref('DBSHIFT', 'STG_AO_CLAIM_INSERT_DATA') }} AS SRC
         name: DIM_AO_CLAIM
         noLinkRefs: []
   name: DIM_AO_CLAIM

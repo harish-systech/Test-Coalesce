@@ -60,8 +60,7 @@ operation:
                 stepCounter: 61e05d2e-4b76-47a6-b9a0-d12c96c4a638
               - columnCounter: 32a76a5b-d5a2-4c28-98e9-d757d54406a3
                 stepCounter: 61e05d2e-4b76-47a6-b9a0-d12c96c4a638
-            transform: ROW_NUMBER() OVER (PARTITION BY CTE.EPIC_CLIENT_LOOKUP_CODE ORDER
-              BY CTE.AO_DATE_UPDATED DESC)
+            transform: ROW_NUMBER() OVER (PARTITION BY CTE.EPIC_CLIENT_LOOKUP_CODE ORDER BY CTE.AO_DATE_UPDATED DESC)
     cteString: ""
     enabledColumnTestIDs: []
     sourceMapping:
@@ -73,8 +72,7 @@ operation:
           - locationName: DBSHIFT
             nodeName: AO_RESPONSE_FEED
         join:
-          joinCondition: FROM {{ ref('DBSHIFT', 'AO_RESPONSE_FEED') }} AS CTE WHERE
-            CTE.SF_ACCOUNT_ID IS NOT NULL
+          joinCondition: FROM {{ ref('DBSHIFT', 'AO_RESPONSE_FEED') }} AS CTE WHERE CTE.SF_ACCOUNT_ID IS NOT NULL
         name: V_TMP_AO_RESPONSE_FEED
         noLinkRefs: []
   name: V_TMP_AO_RESPONSE_FEED
