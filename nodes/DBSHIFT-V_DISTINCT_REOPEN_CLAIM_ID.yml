@@ -42,8 +42,7 @@ operation:
           - locationName: DBSHIFT
             nodeName: ACA_REOPEN_CLAIM_ESIS
         join:
-          joinCondition: FROM {{ ref('DBSHIFT', 'ACA_REOPEN_CLAIM_ESIS') }} AS T
-            GROUP BY T.CLAIM_ID
+          joinCondition: FROM {{ ref('DBSHIFT', 'ACA_REOPEN_CLAIM_ESIS') }} AS T GROUP BY T.CLAIM_ID
         name: V_DISTINCT_REOPEN_CLAIM_ID
         noLinkRefs: []
   name: V_DISTINCT_REOPEN_CLAIM_ID

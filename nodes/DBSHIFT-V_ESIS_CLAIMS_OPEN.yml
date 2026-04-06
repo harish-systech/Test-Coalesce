@@ -94,8 +94,7 @@ operation:
           - locationName: DBSHIFT
             nodeName: ACA_CLAIM
         join:
-          joinCondition: FROM {{ ref('DBSHIFT', 'ACA_CLAIM') }} AS T WHERE T.SOURCE_SYSTEM
-            = 'ESIS'
+          joinCondition: FROM {{ ref('DBSHIFT', 'ACA_CLAIM') }} AS T WHERE T.SOURCE_SYSTEM = 'ESIS'
         name: V_ESIS_CLAIMS_OPEN
         noLinkRefs: []
   name: V_ESIS_CLAIMS_OPEN

@@ -1,6 +1,6 @@
 fileVersion: 1
-id: 1a6d8ea0-1c2d-4e3f-4a5b-6c7d8e9f0b1d
-name: V_ESIS_CLAIMS_CLOSED
+id: 2b7e9fb1-2d3e-4f4a-5b6c-7d8e9f0b1c2f
+name: V_ESIS_CLAIMS_REOPEN
 operation:
   config:
     insertStrategy: INSERT
@@ -19,8 +19,8 @@ operation:
     columns:
       - appliedColumnTests: {}
         columnReference:
-          columnCounter: 2b7e9fb1-2d3e-4f4a-5b6c-7d8e9f0b1c2e
-          stepCounter: 1a6d8ea0-1c2d-4e3f-4a5b-6c7d8e9f0b1d
+          columnCounter: 3c8fa0c2-3e4f-4a5b-6c7d-8e9f0b1c2d40
+          stepCounter: 2b7e9fb1-2d3e-4f4a-5b6c-7d8e9f0b1c2f
         config: {}
         dataType: VARCHAR
         description: ""
@@ -33,8 +33,8 @@ operation:
             transform: C.ACA_CLAIM_ID
       - appliedColumnTests: {}
         columnReference:
-          columnCounter: 3c8fa0c2-3e4f-4a5b-6c7d-8e9f0b1c2d3f
-          stepCounter: 1a6d8ea0-1c2d-4e3f-4a5b-6c7d8e9f0b1d
+          columnCounter: 4d9fb1d3-4f5a-4b6c-7d8e-9f0b1c2d3e4b
+          stepCounter: 2b7e9fb1-2d3e-4f4a-5b6c-7d8e9f0b1c2f
         config: {}
         dataType: NUMBER(38,0)
         description: ""
@@ -42,13 +42,13 @@ operation:
         nullable: true
         sourceColumnReferences:
           - columnReferences:
-              - columnCounter: 9e3a4b5c-6d7e-4f8a-9b0c-1d2e3f4a5b6c
+              - columnCounter: 0f4b5c6d-7e8f-4a9b-0c1d-2e3f4a5b6c7d
                 stepCounter: 7c1e2f3a-4b5c-4d6e-7f8a-9b0c1d2e3f4a
-            transform: CAST(TO_VARCHAR(R.CLOSE_DATE, 'YYYYMMDD') AS INT)
+            transform: CAST(TO_VARCHAR(R.REOPEN_DATE, 'YYYYMMDD') AS INT)
       - appliedColumnTests: {}
         columnReference:
-          columnCounter: 4d9fb1d3-4f5a-4b6c-7d8e-9f0b1c2d3e4a
-          stepCounter: 1a6d8ea0-1c2d-4e3f-4a5b-6c7d8e9f0b1d
+          columnCounter: 5ea0c2e4-5a6b-4c7d-8e9f-0b1c2d3e4f5c
+          stepCounter: 2b7e9fb1-2d3e-4f4a-5b6c-7d8e9f0b1c2f
         config: {}
         dataType: TIMESTAMP_NTZ
         description: ""
@@ -56,13 +56,13 @@ operation:
         nullable: true
         sourceColumnReferences:
           - columnReferences:
-              - columnCounter: 9e3a4b5c-6d7e-4f8a-9b0c-1d2e3f4a5b6c
+              - columnCounter: 0f4b5c6d-7e8f-4a9b-0c1d-2e3f4a5b6c7d
                 stepCounter: 7c1e2f3a-4b5c-4d6e-7f8a-9b0c1d2e3f4a
-            transform: R.CLOSE_DATE
+            transform: R.REOPEN_DATE
       - appliedColumnTests: {}
         columnReference:
-          columnCounter: 5ea0c2e4-5a6b-4c7d-8e9f-0b1c2d3e4f5b
-          stepCounter: 1a6d8ea0-1c2d-4e3f-4a5b-6c7d8e9f0b1d
+          columnCounter: 6fb1d3f5-6b7c-4d8e-9f0a-1b2c3d4e5f6d
+          stepCounter: 2b7e9fb1-2d3e-4f4a-5b6c-7d8e9f0b1c2f
         config: {}
         dataType: VARCHAR
         description: ""
@@ -70,11 +70,11 @@ operation:
         nullable: true
         sourceColumnReferences:
           - columnReferences: []
-            transform: "'F'"
+            transform: "'R'"
       - appliedColumnTests: {}
         columnReference:
-          columnCounter: 6fb1d3f5-6b7c-4d8e-9f0a-1b2c3d4e5f6c
-          stepCounter: 1a6d8ea0-1c2d-4e3f-4a5b-6c7d8e9f0b1d
+          columnCounter: 7ac2e406-7c8d-4e9f-a01b-2c3d4e5f6a7e
+          stepCounter: 2b7e9fb1-2d3e-4f4a-5b6c-7d8e9f0b1c2f
         config: {}
         dataType: VARCHAR
         description: ""
@@ -82,7 +82,7 @@ operation:
         nullable: true
         sourceColumnReferences:
           - columnReferences: []
-            transform: "'CLOSED'"
+            transform: "'REOPENED'"
     cteString: ""
     enabledColumnTestIDs: []
     sourceMapping:
@@ -96,12 +96,10 @@ operation:
           - locationName: DBSHIFT
             nodeName: ACA_CLAIM
         join:
-          joinCondition: FROM {{ ref('DBSHIFT', 'ACA_REOPEN_CLAIM_ESIS') }} AS R
-            INNER JOIN {{ ref('DBSHIFT', 'ACA_CLAIM') }} AS C ON C.SOURCE_SYSTEM_CLAIM_ID
-            = R.CLAIM_ID WHERE R.CLOSE_DATE IS NOT NULL
-        name: V_ESIS_CLAIMS_CLOSED
+          joinCondition: FROM {{ ref('DBSHIFT', 'ACA_REOPEN_CLAIM_ESIS') }} AS R INNER JOIN {{ ref('DBSHIFT', 'ACA_CLAIM') }} AS C ON C.SOURCE_SYSTEM_CLAIM_ID = R.CLAIM_ID WHERE R.REOPEN_DATE IS NOT NULL
+        name: V_ESIS_CLAIMS_REOPEN
         noLinkRefs: []
-  name: V_ESIS_CLAIMS_CLOSED
+  name: V_ESIS_CLAIMS_REOPEN
   overrideSQL: false
   schema: STAGING
   sqlType: Stage
