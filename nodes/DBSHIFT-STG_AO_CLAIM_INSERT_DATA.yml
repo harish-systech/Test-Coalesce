@@ -702,8 +702,7 @@ operation:
           - columnReferences:
               - columnCounter: c2d3e4f5-a6b7-c8d9-e0f1-a2b3c4d5e6f7
                 stepCounter: 8b9c0d1e-2f3a-4b5c-6d7e-8f9a0b1c2d3e
-            transform: IFF(SOURCE.SOURCE_SYSTEM_SALESFORCE_CLAIM_SPECIALTY_ID IS NOT NULL,
-              'N','I')
+            transform: IFF(SOURCE.SOURCE_SYSTEM_SALESFORCE_CLAIM_SPECIALTY_ID IS NOT NULL, 'N','I')
       - appliedColumnTests: {}
         columnReference:
           columnCounter: 0b1c2d3e-4f5a-6b7c-8d9e-0f1a2b3c4d51
@@ -741,7 +740,7 @@ operation:
         nullable: true
         sourceColumnReferences:
           - columnReferences: []
-            transform: '''spao_ao_claim_insert_update'''
+            transform: "'spao_ao_claim_insert_update'"
       - appliedColumnTests: {}
         columnReference:
           columnCounter: 3e4f5a6b-7c8d-9e0f-1a2b-3c4d5e6f7a84
