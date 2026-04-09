@@ -60,8 +60,7 @@ operation:
                 stepCounter: 1b1e3f8a-5a9d-4e2f-b8c7-9d6a1b3e4f5a
               - columnCounter: d3e5f6g7-b4c5-4d6e-9f7g-8h9i1j2k3l4m
                 stepCounter: 1b1e3f8a-5a9d-4e2f-b8c7-9d6a1b3e4f5a
-            transform: CAST(SHA2(CONCAT(IFNULL(AOC.POLICY_COVERAGE_TYPE, '-x'), IFNULL(AOC.POLICY_COVERAGE_KIND,
-              '-x')), 256) AS BIGINT)
+            transform: CAST(SHA2(CONCAT(IFNULL(AOC.POLICY_COVERAGE_TYPE, '-x'), IFNULL(AOC.POLICY_COVERAGE_KIND, '-x')), 256) AS BIGINT)
     cteString: ""
     enabledColumnTestIDs: []
     sourceMapping:

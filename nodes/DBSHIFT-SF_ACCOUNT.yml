@@ -1,8 +1,8 @@
 fileVersion: 1
-id: 1b1e3f8a-5a9d-4e2f-b8c7-9d6a1b3e4f5a
-name: AO_CLAIM
+id: 6c8d7e4b-6a1b-4f9d-9b3f-4a0e4c8d5e2f
+name: SF_ACCOUNT
 operation:
-  database: ALLIANT_ONE
+  database: ""
   deployEnabled: true
   description: ""
   locationName: DBSHIFT
@@ -13,13 +13,13 @@ operation:
           values: []
         appliedColumnTests: {}
         columnReference:
-          columnCounter: c2d4e5f6-a3b4-4c5d-8e6f-7g8h9i1j2k3l
-          stepCounter: 1b1e3f8a-5a9d-4e2f-b8c7-9d6a1b3e4f5a
+          columnCounter: 1d9e8f5c-7b2c-4a0e-ad4a-5b1f5d9e6f3a
+          stepCounter: 6c8d7e4b-6a1b-4f9d-9b3f-4a0e4c8d5e2f
         config: {}
-        dataType: VARCHAR
+        dataType: VARCHAR(50)
         defaultValue: ""
         description: ""
-        name: POLICY_COVERAGE_TYPE
+        name: SF_ACCOUNT_ID
         nullable: true
         primaryKey: false
         sourceColumnReferences:
@@ -32,13 +32,13 @@ operation:
           values: []
         appliedColumnTests: {}
         columnReference:
-          columnCounter: d3e5f6g7-b4c5-4d6e-9f7g-8h9i1j2k3l4m
-          stepCounter: 1b1e3f8a-5a9d-4e2f-b8c7-9d6a1b3e4f5a
+          columnCounter: 2e0f9a6d-8c3d-4b1f-be5b-6c2a6e0f7a4b
+          stepCounter: 6c8d7e4b-6a1b-4f9d-9b3f-4a0e4c8d5e2f
         config: {}
         dataType: VARCHAR
         defaultValue: ""
         description: ""
-        name: POLICY_COVERAGE_KIND
+        name: SF_ACCOUNT_NAME
         nullable: true
         primaryKey: false
         sourceColumnReferences:
@@ -46,8 +46,8 @@ operation:
             transform: ""
         transform: ""
         uniqueKey: false
-  name: AO_CLAIM
-  schema: DBO
+  name: SF_ACCOUNT
+  schema: REF
   sqlType: Source
   type: sourceInput
   version: 1

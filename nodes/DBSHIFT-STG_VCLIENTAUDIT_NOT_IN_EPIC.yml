@@ -66,8 +66,7 @@ operation:
           - locationName: DBSHIFT
             nodeName: VCLIENT
         join:
-          joinCondition: FROM {{ ref('DBSHIFT', 'VCLIENT') }} "VCLIENT"
-            WHERE VCLIENT.CLIENTINEPICFLAG = 'N'
+          joinCondition: FROM {{ ref('DBSHIFT', 'VCLIENT') }} "VCLIENT" WHERE VCLIENT.CLIENTINEPICFLAG = 'N'
         name: STG_VCLIENTAUDIT_NOT_IN_EPIC
         noLinkRefs: []
   name: STG_VCLIENTAUDIT_NOT_IN_EPIC
