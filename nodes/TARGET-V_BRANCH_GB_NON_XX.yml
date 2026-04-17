@@ -1,6 +1,6 @@
 fileVersion: 1
-id: a04a4a5e-3d6d-4caB-dfdf-6f7a8b9c0d1e
-name: V_BRANCH_GB_XX
+id: 9e3f3f4d-2c5c-4b9a-cecf-5e6f7a8b9c0d
+name: V_BRANCH_GB_NON_XX
 operation:
   config:
     insertStrategy: INSERT
@@ -12,15 +12,15 @@ operation:
   deployEnabled: true
   description: ""
   isMultisource: false
-  locationName: DBSHIFT
+  locationName: TARGET
   materializationType: view
   metadata:
     appliedNodeTests: []
     columns:
       - appliedColumnTests: {}
         columnReference:
-          columnCounter: 9d5e9eef-6b0b-4eeg-d181-7f8a9b0c1d2e
-          stepCounter: a04a4a5e-3d6d-4caB-dfdf-6f7a8b9c0d1e
+          columnCounter: 8c4d8dde-5a9a-4ddf-c070-6e7f8a9b0c1d
+          stepCounter: 9e3f3f4d-2c5c-4b9a-cecf-5e6f7a8b9c0d
         config: {}
         dataType: VARCHAR
         description: ""
@@ -30,13 +30,11 @@ operation:
           - columnReferences:
               - columnCounter: 6a2b6bbc-3e7e-4bbf-ae5e-4c5d6e7f8a9b
                 stepCounter: 7c1d1d2b-0a3a-4f7e-adac-3c4d5e6f7a8b
-              - columnCounter: 5f1a5aab-2d6d-4aae-9d4d-3b4c5d6e7f8a
-                stepCounter: 6b0c0c1a-9f2f-4e6d-9c9b-2b3c4d5e6f7a
-            transform: REPLACE(IC.SOURCE_SYSTEM_NCCI_INJURY_CODE, 'XX', S.BENEFIT_JURISDICTION_STATE_CODE)
+            transform: GB.SOURCE_SYSTEM_NCCI_INJURY_CODE
       - appliedColumnTests: {}
         columnReference:
-          columnCounter: ab6f7b8c-9d0e-4f1a-b2c3-d4e5f6a7b8c9
-          stepCounter: a04a4a5e-3d6d-4caB-dfdf-6f7a8b9c0d1e
+          columnCounter: de5f6a7b-8c9d-4e0f-b1f2-a3b4c5d6e7f8
+          stepCounter: 9e3f3f4d-2c5c-4b9a-cecf-5e6f7a8b9c0d
         config: {}
         dataType: VARCHAR
         description: ""
@@ -46,11 +44,11 @@ operation:
           - columnReferences:
               - columnCounter: ab3c4d5e-6f7a-4b8c-9d0e-1f2a3b4c5d6e
                 stepCounter: 7c1d1d2b-0a3a-4f7e-adac-3c4d5e6f7a8b
-            transform: IC.NCCI_INJURY_CODE
+            transform: GB.NCCI_INJURY_CODE
       - appliedColumnTests: {}
         columnReference:
-          columnCounter: cd7a8b9c-0e1f-4a2b-b3c4-d5e6f7a8b9c0
-          stepCounter: a04a4a5e-3d6d-4caB-dfdf-6f7a8b9c0d1e
+          columnCounter: ef6a7b8c-9d0e-4f1a-b2c3-d4e5f6a7b8c9
+          stepCounter: 9e3f3f4d-2c5c-4b9a-cecf-5e6f7a8b9c0d
         config: {}
         dataType: VARCHAR
         description: ""
@@ -60,32 +58,25 @@ operation:
           - columnReferences:
               - columnCounter: cd4e5f6a-7b8c-4d9e-af1b-2c3d4e5f6a7b
                 stepCounter: 7c1d1d2b-0a3a-4f7e-adac-3c4d5e6f7a8b
-            transform: IC.NCCI_INJURY
+            transform: GB.NCCI_INJURY
     cteString: ""
     enabledColumnTestIDs: []
     sourceMapping:
       - aliases:
-          ACA_NCCI_INJURY_CODE_GB: ic
+          GB: 7c1d1d2b-0a3a-4f7e-adac-3c4d5e6f7a8b
         customSQL:
           customSQL: ""
         dependencies:
-          - locationName: DBSHIFT
+          - locationName: SRC
             nodeName: ACA_NCCI_INJURY_CODE_GB
-          - locationName: DBSHIFT
-            nodeName: ACA_CLAIM_TRANSACTION
         join:
-          joinCondition: FROM {{ ref('DBSHIFT', 'ACA_NCCI_INJURY_CODE_GB') }} AS
-            "IC" CROSS JOIN (SELECT BENEFIT_JURISDICTION_STATE_CODE FROM {{
-            ref('DBSHIFT', 'ACA_CLAIM_TRANSACTION') }} WHERE SOURCE_SYSTEM =
-            'GB' EXCEPT SELECT BENEFIT_STATE FROM {{ ref('DBSHIFT',
-            'ACA_NCCI_INJURY_CODE_GB') }} WHERE BENEFIT_STATE <> 'XX') AS S
-            WHERE IC.BENEFIT_STATE = 'XX'
-        name: V_BRANCH_GB_XX
+          joinCondition: FROM {{ ref('SRC', 'ACA_NCCI_INJURY_CODE_GB') }} AS "GB" WHERE GB.BENEFIT_STATE <> 'XX'
+        name: V_BRANCH_GB_NON_XX
         noLinkRefs: []
-  name: V_BRANCH_GB_XX
+  name: V_BRANCH_GB_NON_XX
   overrideSQL: false
   schema: RPT
-  sqlType: View
+  sqlType: Stage
   type: sql
   version: 1
 type: Node

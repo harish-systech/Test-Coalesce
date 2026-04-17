@@ -12,7 +12,7 @@ operation:
   deployEnabled: true
   description: ""
   isMultisource: false
-  locationName: DBSHIFT
+  locationName: TARGET
   materializationType: view
   metadata:
     appliedNodeTests: []
@@ -66,20 +66,20 @@ operation:
         customSQL:
           customSQL: ""
         dependencies:
-          - locationName: DBSHIFT
+          - locationName: src
             nodeName: V_BRANCH_ESIS
-          - locationName: DBSHIFT
+          - locationName: src
             nodeName: V_BRANCH_GB_NON_XX
-          - locationName: DBSHIFT
+          - locationName: SRC
             nodeName: V_BRANCH_GB_XX
         join:
           joinCondition: |-
             FROM (
-              SELECT * FROM {{ ref('DBSHIFT','V_BRANCH_ESIS') }}
+              SELECT * FROM {{ ref('src','V_BRANCH_ESIS') }}
               UNION ALL
-              SELECT * FROM {{ ref('DBSHIFT','V_BRANCH_GB_NON_XX') }}
+              SELECT * FROM {{ ref('src','V_BRANCH_GB_NON_XX') }}
               UNION ALL
-              SELECT * FROM {{ ref('DBSHIFT','V_BRANCH_GB_XX') }}
+              SELECT * FROM {{ ref('SRC','V_BRANCH_GB_XX') }}
             ) AS U
         name: ASTRUSMODELNCCIINJURYCODE
         noLinkRefs: []

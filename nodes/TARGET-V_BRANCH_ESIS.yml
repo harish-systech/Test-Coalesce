@@ -12,7 +12,7 @@ operation:
   deployEnabled: true
   description: ""
   isMultisource: false
-  locationName: DBSHIFT
+  locationName: TARGET
   materializationType: view
   metadata:
     appliedNodeTests: []
@@ -65,19 +65,16 @@ operation:
     enabledColumnTestIDs: []
     sourceMapping:
       - aliases:
-          ACA_NCCI_INJURY_CODE_ESIS: ic
+          IC: 5a9b9b0f-8f1e-4d5c-8b8a-1a2b3c4d5e6f
         customSQL:
           customSQL: ""
         dependencies:
-          - locationName: DBSHIFT
-            nodeName: ACA_NCCI_INJURY_CODE_ESIS
-          - locationName: DBSHIFT
+          - locationName: SRC
             nodeName: ACA_CLAIM_TRANSACTION
+          - locationName: SRC
+            nodeName: ACA_NCCI_INJURY_CODE_ESIS
         join:
-          joinCondition: FROM {{ ref('DBSHIFT', 'ACA_NCCI_INJURY_CODE_ESIS') }} AS "IC"
-            CROSS JOIN (SELECT BENEFIT_JURISDICTION_STATE_CODE FROM {{ ref('DBSHIFT',
-            'ACA_CLAIM_TRANSACTION') }} WHERE SOURCE_SYSTEM = 'ESIS' GROUP BY BENEFIT_JURISDICTION_STATE_CODE)
-            AS S
+          joinCondition: FROM {{ ref('SRC', 'ACA_NCCI_INJURY_CODE_ESIS') }} AS "IC" CROSS JOIN (SELECT BENEFIT_JURISDICTION_STATE_CODE FROM {{ ref('SRC', 'ACA_CLAIM_TRANSACTION') }} WHERE SOURCE_SYSTEM = 'ESIS' GROUP BY BENEFIT_JURISDICTION_STATE_CODE) AS S
         name: V_BRANCH_ESIS
         noLinkRefs: []
   name: V_BRANCH_ESIS
