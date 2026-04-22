@@ -61,8 +61,7 @@ operation:
               - columnCounter: 0f2b2512-b063-4413-92f7-54de54a7ac19
                 stepCounter: 61e9389f-8561-45fe-8686-f481c3e39b7d
             transform: ""
-        transform: DECRYPTBYKEYAUTOCERT(CERT_ID('CERTIFICATE1'), NULL, ACA_CLAIMANT.CLAIMANT_ENCRYPTED,
-          1, '123')::VARCHAR(256)
+        transform: DECRYPTBYKEYAUTOCERT(CERT_ID('CERTIFICATE1'), NULL, ACA_CLAIMANT.CLAIMANT_ENCRYPTED, 1, '123')::VARCHAR(256)
       - appliedColumnTests: {}
         columnReference:
           columnCounter: 3267d3e5-0205-4085-b924-f728c70d458c
@@ -77,8 +76,7 @@ operation:
               - columnCounter: e82e0a29-373f-4de1-a53b-0eb6616428d0
                 stepCounter: 61e9389f-8561-45fe-8686-f481c3e39b7d
             transform: ""
-        transform: DECRYPTBYKEYAUTOCERT(CERT_ID('CERTIFICATE1'), NULL, ACA_CLAIMANT.LAST_NAME_ENCRYPTED,
-          1, '123')::VARCHAR(256)
+        transform: DECRYPTBYKEYAUTOCERT(CERT_ID('CERTIFICATE1'), NULL, ACA_CLAIMANT.LAST_NAME_ENCRYPTED, 1, '123')::VARCHAR(256)
       - appliedColumnTests: {}
         columnReference:
           columnCounter: 2f73315a-b605-4c04-a521-026c4f03932e
@@ -93,8 +91,7 @@ operation:
               - columnCounter: 0c266f81-54e6-4d0f-a42e-13c54d15654d
                 stepCounter: 61e9389f-8561-45fe-8686-f481c3e39b7d
             transform: ""
-        transform: DECRYPTBYKEYAUTOCERT(CERT_ID('CERTIFICATE1'), NULL, ACA_CLAIMANT.FIRST_NAME_ENCRYPTED,
-          1, '123')::VARCHAR(256)
+        transform: DECRYPTBYKEYAUTOCERT(CERT_ID('CERTIFICATE1'), NULL, ACA_CLAIMANT.FIRST_NAME_ENCRYPTED, 1, '123')::VARCHAR(256)
       - appliedColumnTests: {}
         columnReference:
           columnCounter: ab8f26a5-3435-43ed-a472-a077422f2560
@@ -109,8 +106,7 @@ operation:
               - columnCounter: d3605658-54c7-4fd7-a068-07f1d4f21644
                 stepCounter: 61e9389f-8561-45fe-8686-f481c3e39b7d
             transform: ""
-        transform: DECRYPTBYKEYAUTOCERT(CERT_ID('CERTIFICATE1'), NULL, ACA_CLAIMANT.ORGANIZATION_ENCRYPTED,
-          1, '123')::VARCHAR(256)
+        transform: DECRYPTBYKEYAUTOCERT(CERT_ID('CERTIFICATE1'), NULL, ACA_CLAIMANT.ORGANIZATION_ENCRYPTED, 1, '123')::VARCHAR(256)
       - appliedColumnTests: {}
         columnReference:
           columnCounter: 32ecb4bb-a324-4f01-90a6-f283d5a71a17
@@ -125,8 +121,7 @@ operation:
               - columnCounter: f3793e50-9c2f-4889-bc82-d4b901a1d13f
                 stepCounter: 61e9389f-8561-45fe-8686-f481c3e39b7d
             transform: ""
-        transform: DECRYPTBYKEYAUTOCERT(CERT_ID('CERTIFICATE1'), NULL, ACA_CLAIMANT.ADDRESS_ENCRYPTED,
-          1, '123')::VARCHAR(256)
+        transform: DECRYPTBYKEYAUTOCERT(CERT_ID('CERTIFICATE1'), NULL, ACA_CLAIMANT.ADDRESS_ENCRYPTED, 1, '123')::VARCHAR(256)
       - appliedColumnTests: {}
         columnReference:
           columnCounter: b5121c25-1025-4c02-9993-379e53995f51
@@ -231,8 +226,7 @@ operation:
               - columnCounter: d1a4c9b3-4f93-4a69-af7b-d0a09e088d8b
                 stepCounter: 61e9389f-8561-45fe-8686-f481c3e39b7d
             transform: ""
-        transform: DECRYPTBYKEYAUTOCERT(CERT_ID('CERTIFICATE1'), NULL, ACA_CLAIMANT.SSN_ENCRYPTED,
-          1, '123')::VARCHAR(256)
+        transform: DECRYPTBYKEYAUTOCERT(CERT_ID('CERTIFICATE1'), NULL, ACA_CLAIMANT.SSN_ENCRYPTED, 1, '123')::VARCHAR(256)
       - appliedColumnTests: {}
         columnReference:
           columnCounter: b13c49e7-0131-4e78-831d-a3161c561b36
@@ -292,8 +286,7 @@ operation:
               - columnCounter: 0f2f1118-c2b9-4fcf-84bd-8b01057e1c12
                 stepCounter: 61e9389f-8561-45fe-8686-f481c3e39b7d
             transform: ""
-        transform: DECRYPTBYKEYAUTOCERT(CERT_ID('CERTIFICATE1'), NULL, ACA_CLAIMANT.PHONE_ENCRYPTED,
-          1, '123')::VARCHAR(256)
+        transform: DECRYPTBYKEYAUTOCERT(CERT_ID('CERTIFICATE1'), NULL, ACA_CLAIMANT.PHONE_ENCRYPTED, 1, '123')::VARCHAR(256)
       - appliedColumnTests: {}
         columnReference:
           columnCounter: 6b3671be-94e8-4660-848e-dfc19c836a28
